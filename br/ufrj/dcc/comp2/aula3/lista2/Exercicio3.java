@@ -6,21 +6,36 @@ import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 
 public class Exercicio3 {
-    public static void main(String[] args) {
-        // Item a
-        //double[] v = new double[-10];
+    public static void testaMemoria() {
+        // Item a - I
+        double[] v = new double[1000000000];
 
-        //v[0] = 1;
+        v[0] = 1;
 
-        //System.out.printf("Número %f\n", v[0]);
+        System.out.printf("Número %f\n", v[0]);
 
+    }
+
+    public static void testaAlocacaoNegativa() {
+        // Item a - II
+        double[] v = new double[-10];
+
+        v[0] = 1;
+
+        System.out.printf("Número %f\n", v[0]);
+
+    }
+
+    public static void representaDataHora() {
         // Item b
         LocalDateTime dataLocal = LocalDateTime.now();
 
         System.out.println(String.valueOf(dataLocal));
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("d/M/Y, E, H:m:s");
         System.out.println(dataLocal.minusDays(1).format(formatter));
+    }
 
+    public static void usaPilha() {
         Stack<Integer> pilha = new Stack<Integer>();
 
         pilha.push(10);
@@ -43,6 +58,12 @@ public class Exercicio3 {
         if (!pilha.empty()) {
             pilha.pop();
         }
-            
+    }
+
+    public static void main(String[] args) {
+        Exercicio3.testaMemoria();
+        Exercicio3.testaAlocacaoNegativa();
+        Exercicio3.representaDataHora();
+        Exercicio3.usaPilha();
     }
 }
