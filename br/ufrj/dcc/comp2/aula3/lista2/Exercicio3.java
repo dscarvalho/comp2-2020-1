@@ -4,6 +4,11 @@ import java.util.Date;
 import java.util.Stack;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
+import java.util.List;
+import java.util.Arrays;
+import java.util.ArrayList;
+
+
 
 public class Exercicio3 {
     public static void testaMemoria() {
@@ -61,9 +66,17 @@ public class Exercicio3 {
     }
 
     public static void main(String[] args) {
-        Exercicio3.testaMemoria();
-        Exercicio3.testaAlocacaoNegativa();
-        Exercicio3.representaDataHora();
-        Exercicio3.usaPilha();
+        switch(args[0]) {
+            case "Memoria": Exercicio3.testaMemoria();
+                break;
+            case "AlocacaoNegativa": Exercicio3.testaAlocacaoNegativa();
+                break;
+            case "DataHora": Exercicio3.representaDataHora();
+                break;
+            case "Pilha":  Exercicio3.usaPilha();
+                break;
+            default:
+                break;
+        }
     }
 }
